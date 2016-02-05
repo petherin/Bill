@@ -1,0 +1,6 @@
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\bin\Debug\ProxyService.dll.config
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\bin\Debug\ProxyService.dll
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\bin\Debug\ProxyService.pdb
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\obj\Debug\ProxyService.csprojResolveAssemblyReference.cache
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\obj\Debug\ProxyService.dll
+C:\Users\Peter\Documents\Visual Studio 2015\Projects\SkyBill\ProxyService\obj\Debug\ProxyService.pdb
