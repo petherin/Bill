@@ -35,7 +35,7 @@ namespace SkyBill.Controllers.Tests
         }
 
         [TestMethod]
-        public void Default_Route_ExpectedRoutess()
+        public void Default_Route_ExpectedRoutes()
         {
             // Arrange
             TestHelper helper = new TestHelper();
