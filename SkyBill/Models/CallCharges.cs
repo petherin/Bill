@@ -8,6 +8,6 @@ namespace SkyBill.Models
     public class CallCharges
     {
         public List<Call> calls { get; set; }
-        public double total { get; set; }
+        public double Total { get; set; }
     }
 }

@@ -1,0 +1,145 @@
+﻿@model SkyBill.Models.Bill
+@{
+    ViewBag.Title = "Your Bill";
+}
+
+<h2>Bills & Payments</h2>
+
+<div>
+    <h4>Latest Bill
+        @Html.ValueFor(model => model.statement.period.from, "{0:d MMM}")
+    -
+        @Html.ValueFor(model => model.statement.period.to, "{0:d MMM}")
+    </h4>
+    <hr />
+    <div class="well" id="accordion1">
+        <div>
+            <h3><a data-toggle="collapse" data-parent="#accordion1" href="#collapseSubs">My Subscriptions</a></h3>
+        </div>
+        <div id="collapseSubs" class="collapse">
+            <table class="table">
+                @foreach (var item in Model.package.subscriptions)
+            {
+                    <tr>
+                        <td class="col-md-3">
+                            @item.type.ToUpper()
+                        </td>
+                        <td class="col-md-7">
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td class="col-md-2">
+                            @String.Format("{0:C}", item.cost)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td class="col-md-3">
+                        <h3>
+                            @Html.DisplayNameFor(model => model.package.Total)
+                        </h3>
+                    </td>
+                    <td class="col-md-7"></td>
+                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.package.Total)</h3></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="well" id="accordion2">
+        <div>
+            <h3><a data-toggle="collapse" data-parent="#accordion2" href="#collapseCalls">Call Charges</a></h3>
+        </div>
+        <div id="collapseCalls" class="collapse">
+            <table class="table">
+                @foreach (var item in Model.callCharges.calls)
+            {
+                    <tr>
+                        <td class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.called)
+                        </td>
+                        <td class="col-md-7">
+                            @Html.DisplayFor(modelItem => item.duration)
+                        </td>
+                        <td class="col-md-2">
+                            @String.Format("{0:C}", item.cost)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td class="col-md-3">
+                        <h3>
+                            @Html.DisplayNameFor(model => model.callCharges.Total)
+                        </h3>
+                    </td>
+                    <td class="col-md-7"></td>
+                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.callCharges.Total)</h3></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="well" id="accordion3">
+        <div>
+            <h3><a data-toggle="collapse" data-parent="#accordion3" href="#collapseStore">Sky Store</a></h3>
+        </div>
+        <div id="collapseStore" class="collapse">
+            <table class="table">
+                <tr><td class="col-md-3"><h4>@Html.DisplayNameFor(model => model.skyStore.rentals)</h4></td><td class="col-md-7"></td><td class="col-md-2"></td></tr>
+                @foreach (var item in Model.skyStore.rentals)
+            {
+                    <tr>
+                        <td class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td class="col-md-7"></td>
+                        <td class="col-md-2">
+                            @String.Format("{0:C}", item.cost)
+                        </td>
+                    </tr>
+                }
+
+                <tr><td class="col-md-3"><h4>@Html.DisplayNameFor(model => model.skyStore.buyAndKeep)</h4></td><td class="col-md-3"></td><td class="col-md-2"></td></tr>
+                @foreach (var item in Model.skyStore.buyAndKeep)
+            {
+                    <tr>
+                        <td class="col-md-3">
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td class="col-md-7"></td>
+                        <td class="col-md-2">
+                            @String.Format("{0:C}", item.cost)
+                        </td>
+                    </tr>
+                }
+
+                <tr>
+                    <td class="col-md-3">
+                        <h3>
+                            @Html.DisplayNameFor(model => model.skyStore.Total)
+                        </h3>
+                    </td>
+                    <td class="col-md-7"></td>
+                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.skyStore.Total)</h3></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="well">
+        <table class="table">
+            <tr">
+                <td class="col-md-10">
+                    <h3>Total due @Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</h3>
+                </td>
+                <td class="col-md-2">
+                    <h3>@String.Format("{0:C}", Model.Total)</h3>
+                </td>
+                </tr>
+        </table>
+
+    </div>
+    
+    Statement date: <b>@Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</b>

@@ -7,7 +7,7 @@ namespace SkyBill.Models
 {
     public class Period
     {
-        public string from { get; set; }
-        public string to { get; set; }
+        public DateTime from { get; set; }
+        public DateTime to { get; set; }
     }
 }

@@ -7,8 +7,8 @@ namespace SkyBill.Models
 {
     public class Statement
     {
-        public string generated { get; set; }
-        public string due { get; set; }
+        public DateTime generated { get; set; }
+        public DateTime due { get; set; }
         public Period period { get; set; }
     }
 }

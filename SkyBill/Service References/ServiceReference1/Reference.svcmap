@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f5d560ce-0bc9-4499-ae9e-4c854df7dc61" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1a88c19b-e6cf-44e2-8971-4d6402ee08c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ProxyService/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://billservice.cloudapp.net/BillService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="97076cad-697d-4eaf-a009-5884e3f2c27d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="da120027-5f71-42e1-9aee-a72b997b085c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a58bed41-0fde-4a5b-95fb-1a0efed13bca" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyService/Service1/mex" />
-    <MetadataFile FileName="ProxyService.xsd" MetadataType="Schema" ID="9939c07a-c4b2-4948-b8a1-2245792a9d03" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyService/Service1/mex" />
+    <MetadataFile FileName="BillService.disco" MetadataType="Disco" ID="9aa99815-3bff-4d2c-9d19-22f0423e8967" SourceId="1" SourceUrl="http://billservice.cloudapp.net/BillService.svc?disco" />
+    <MetadataFile FileName="BillService.wsdl" MetadataType="Wsdl" ID="bb102ddc-6fec-4e44-97bf-467961a48248" SourceId="1" SourceUrl="http://billservice.cloudapp.net/BillService.svc?wsdl" />
+    <MetadataFile FileName="BillService.xsd" MetadataType="Schema" ID="526fd811-c764-412e-b32b-b510a94ba96c" SourceId="1" SourceUrl="http://billservice.cloudapp.net/BillService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BillService1.xsd" MetadataType="Schema" ID="d5758dbc-fd56-4eb5-ab75-3a19c8751af0" SourceId="1" SourceUrl="http://billservice.cloudapp.net/BillService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
