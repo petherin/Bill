@@ -6,9 +6,10 @@
 <h2>Bills & Payments</h2>
 
 <div>
-    <h4>Latest Bill
+    <h4>
+        Latest Bill
         @Html.ValueFor(model => model.statement.period.from, "{0:d MMM}")
-    -
+        -
         @Html.ValueFor(model => model.statement.period.to, "{0:d MMM}")
     </h4>
     <hr />
@@ -21,10 +22,10 @@
                 @foreach (var item in Model.package.subscriptions)
             {
                     <tr>
-                        <td class="col-md-3">
+                        <td class="col-md-4">
                             @item.type.ToUpper()
                         </td>
-                        <td class="col-md-7">
+                        <td class="col-md-4">
                             @Html.DisplayFor(modelItem => item.name)
                         </td>
                         <td class="col-md-2">
@@ -33,13 +34,13 @@
                     </tr>
                 }
                 <tr>
-                    <td class="col-md-3">
-                        <h3>
+                    <td class="col-md-4">
+                        <h4>
                             @Html.DisplayNameFor(model => model.package.Total)
-                        </h3>
+                        </h4>
                     </td>
-                    <td class="col-md-7"></td>
-                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.package.Total)</h3></td>
+                    <td class="col-md-4"></td>
+                    <td class="col-md-2"><h4>@String.Format("{0:C}", Model.package.Total)</h4></td>
                 </tr>
             </table>
 
@@ -55,10 +56,10 @@
                 @foreach (var item in Model.callCharges.calls)
             {
                     <tr>
-                        <td class="col-md-3">
+                        <td class="col-md-4">
                             @Html.DisplayFor(modelItem => item.called)
                         </td>
-                        <td class="col-md-7">
+                        <td class="col-md-4">
                             @Html.DisplayFor(modelItem => item.duration)
                         </td>
                         <td class="col-md-2">
@@ -67,13 +68,13 @@
                     </tr>
                 }
                 <tr>
-                    <td class="col-md-3">
-                        <h3>
+                    <td class="col-md-4">
+                        <h4>
                             @Html.DisplayNameFor(model => model.callCharges.Total)
-                        </h3>
+                        </h4>
                     </td>
-                    <td class="col-md-7"></td>
-                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.callCharges.Total)</h3></td>
+                    <td class="col-md-4"></td>
+                    <td class="col-md-2"><h4>@String.Format("{0:C}", Model.callCharges.Total)</h4></td>
                 </tr>
             </table>
 
@@ -86,28 +87,28 @@
         </div>
         <div id="collapseStore" class="collapse">
             <table class="table">
-                <tr><td class="col-md-3"><h4>@Html.DisplayNameFor(model => model.skyStore.rentals)</h4></td><td class="col-md-7"></td><td class="col-md-2"></td></tr>
+                <tr><td class="col-md-4"><h4>@Html.DisplayNameFor(model => model.skyStore.rentals)</h4></td><td class="col-md-4"></td><td class="col-md-2"></td></tr>
                 @foreach (var item in Model.skyStore.rentals)
             {
                     <tr>
-                        <td class="col-md-3">
+                        <td class="col-md-4">
                             @Html.DisplayFor(modelItem => item.title)
                         </td>
-                        <td class="col-md-7"></td>
+                        <td class="col-md-4"></td>
                         <td class="col-md-2">
                             @String.Format("{0:C}", item.cost)
                         </td>
                     </tr>
                 }
 
-                <tr><td class="col-md-3"><h4>@Html.DisplayNameFor(model => model.skyStore.buyAndKeep)</h4></td><td class="col-md-3"></td><td class="col-md-2"></td></tr>
+                <tr><td class="col-md-4"><h4>@Html.DisplayNameFor(model => model.skyStore.buyAndKeep)</h4></td><td class="col-md-4"></td><td class="col-md-2"></td></tr>
                 @foreach (var item in Model.skyStore.buyAndKeep)
             {
                     <tr>
-                        <td class="col-md-3">
+                        <td class="col-md-4">
                             @Html.DisplayFor(modelItem => item.title)
                         </td>
-                        <td class="col-md-7"></td>
+                        <td class="col-md-4"></td>
                         <td class="col-md-2">
                             @String.Format("{0:C}", item.cost)
                         </td>
@@ -115,31 +116,36 @@
                 }
 
                 <tr>
-                    <td class="col-md-3">
-                        <h3>
+                    <td class="col-md-4">
+                        <h4>
                             @Html.DisplayNameFor(model => model.skyStore.Total)
-                        </h3>
+                        </h4>
                     </td>
-                    <td class="col-md-7"></td>
-                    <td class="col-md-2"><h3>@String.Format("{0:C}", Model.skyStore.Total)</h3></td>
+                    <td class="col-md-4"></td>
+                    <td class="col-md-2"><h4>@String.Format("{0:C}", Model.skyStore.Total)</h4></td>
                 </tr>
             </table>
 
         </div>
     </div>
 
-    <div class="well">
+    <div class="well" >
+        <div>
+            <h3>Bill Total</h3>
+        </div>
         <table class="table">
-            <tr">
-                <td class="col-md-10">
-                    <h3>Total due @Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</h3>
+            <tr>
+                <td class="col-md-4">
+                    <h4>Due @Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</h4>
                 </td>
+                <td class="col-md-4"></td>
                 <td class="col-md-2">
-                    <h3>@String.Format("{0:C}", Model.Total)</h3>
+                    <h4>@String.Format("{0:C}", Model.Total)</h4>
                 </td>
-                </tr>
+            </tr>
         </table>
 
     </div>
-    
-    Statement date: <b>@Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</b>
+</div>
+
+Statement date: <b>@Html.ValueFor(model => model.statement.generated, "{0:d MMM yyyy}")</b>
